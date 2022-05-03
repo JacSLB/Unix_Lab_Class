@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+
+
+import sys
+
+if (len(sys.argv) == 2):
+  key = sys.argv[1]
+  message = input()
+  message = message.upper()
+  alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  add_string = ""
+
+  for i in range(len(message)):
+    if message[i].isalpha():
+      add_string += message[i]
+
+  cipher = ""
+
+  for i in range(len(add_string)):
+    index_num = alphabet.index(add_string[i]) + int(key)
+    cipher += alphabet[index_num]
+
+  print(cipher)
+  
+else:
+  print("python3 caesar.py key")
